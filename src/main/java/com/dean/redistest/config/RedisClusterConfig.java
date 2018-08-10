@@ -16,7 +16,6 @@ public class RedisClusterConfig extends CachingConfigurerSupport {
     public RedisTemplate redisTemplate() {
         StringRedisTemplate template = new StringRedisTemplate();
         Map<String, Object> source = new HashMap<>();
-        RedisClusterConfiguration config = new RedisClusterConfiguration(source);
         JedisConnectionFactory factor = new JedisConnectionFactory(config);
         template.setConnectionFactory(factor);
     }
