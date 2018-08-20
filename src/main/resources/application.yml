@@ -1,5 +1,11 @@
 spring:
   redis:
     cluster:
-      nodes: localhost:6379,localhost:6380
-      max-redirects: 5
+      max-redirects: 8
+      nodes: 192.168.1.215:6379,192.168.1.215:6380,192.168.1.215:6381
+    jedis:
+      pool:
+        max-idle: 10
+        max-wait: 30000ms
+        min-idle: 3
+        max-active: 20
